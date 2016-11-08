@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="ROBOTS" content="NONE" />
+        <title>Devblog</title>
+        
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{{style}}" />
+        <link rel="favicon" href="{%  static favicon %}">
+    </head>
+
+    <body>
+        <div id="wrapper">   
+            <div>
+                <h1 class="text_over_main_img">- Sighill<br>-- Blog de développement</h1>
+                <img src="{{main_img}}" alt="main_img" id="main_img">
+            </div> <!-- end main_img div -->
+
+            <div class="navbar_container">
+                {% for navbar_item in navbar %}
+                <div class="navbar_block">
+                    <a href="{{navbar_item.link}}">
+                        <h3>{{navbar_item.name}}</h3>
+                    </a>
+                </div> <!-- end navbar_block -->
+                {% endfor %}
+            </div> <!-- end navbar_container -->
+         
+            <div class="container" id="corpus">
+                {% for post in content %}
+                <div class="container">
+                    <div class="block">
+                        <h2>{{post.title}}</h2>
+                        <p class="post_footer">Posté le {{post.posted_date.day}}-{{post.posted_date.month}}-{{post.posted_date.year}}. Catégorie : {{post.category}}.</p>
+                        <p>{{post.body | safe}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div> <!-- end corpus container -->
+
+            <div class="container" id="sidebar_right">
+                <div class="container" id="sidebar_container_a">
+                    <div class="block">
+                        <h4>Catégories</h4>
+                        <ul>
+                        {% for category in categories %}
+                            <li>{{category}}</li>
+                        {% endfor %}
+                        </ul>
+                    </div> <!-- end block -->
+
+                    <div class="block">
+                        <h4>Architecture serveur</h4>
+                        <a href="#archi_serveur"><img src="{{img_archi_serveur}}"></a>
+                    </div>
+                </div> <!-- end container -->
+            </div>
+        </div>
+
+        <a href="#" class="JesterBox">
+          <div id="archi_serveur"><img src="{{img_archi_serveur}}"></div>
+        </a>
+    </body>
+
+</html>

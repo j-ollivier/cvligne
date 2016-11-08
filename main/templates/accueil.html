@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="ROBOTS" content="NONE" />
+        <title>Accueil</title>
+        
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{{style}}" />
+    </head>
+
+    <body>
+        <div id="wrapper">   
+            <div>
+                <h1 class="text_over_main_img">- Sighill<br>-- Accueil</h1>
+                <img src="{{main_img}}" alt="main_img" id="main_img">
+            </div> <!-- end main_img div -->
+
+            <div class="navbar_container">
+                {% for navbar_item in navbar %}
+                <div class="navbar_block">
+                    <a href="{{navbar_item.link}}">
+                        <h4>{{navbar_item.name}}</h4>
+                    </a>
+                </div> <!-- end navbar_block -->
+                {% endfor %}
+            </div> <!-- end navbar_container -->
+
+            <div class="container">
+                <img src="{{content}}">
+            </div>
+        </div>
+    </body>
+
+</html>
