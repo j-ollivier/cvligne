@@ -3,33 +3,91 @@
     <head>
         <meta charset="utf-8">
         <meta name="ROBOTS" content="NONE" />
-        <title>CV</title>
+        <title>CV Julien Ollivier</title>
         
         {% load staticfiles %}
         <link rel="stylesheet" type="text/css" href="{{style}}" />
+        <link rel="favicon" href="{{favicon}}" />
     </head>
 
     <body>
         <div id="wrapper">   
             <div>
-                <h1 class="text_over_main_img">- Sighill<br>-- Curriculum Vitae</h1>
+                <h1 class="text_over_main_img">Curriculum Vitae</h1>
                 <img src="{{main_img}}" alt="main_img" id="main_img">
             </div> <!-- end main_img div -->
 
-            <div class="navbar_container">
+            <div class="container navbar_container">
                 {% for navbar_item in navbar %}
-                <div class="navbar_block">
+                <div class="block">
                     <a href="{{navbar_item.link}}">
-                        <h4>{{navbar_item.name}}</h4>
+                        <h3>{{navbar_item.name}}</h3>
                     </a>
                 </div> <!-- end navbar_block -->
                 {% endfor %}
             </div> <!-- end navbar_container -->
 
+            <h1>Compétences</h1>
+            <div class="container comp_container">
+                <div class="block comp_block">
+                    <h3>Géomatiques</h3>
+                    <ul>
+                        <li class="comp_list">Maîtrise SIG</li>
+                        <li class="comp_list">Maîtrise de traitements d'image et télédétection</li>
+                        <li class="comp_list">Maîtrise base de données</li>
+                        <li class="comp_list">Connaissances programmation</li>
+                    </ul>
+                </div>
+                <div class="block comp_block">
+                    <h3>Techniques</h3>
+                    <ul>
+                        <li class="comp_list">Connaissances en environnement et biologie</li>
+                        <li class="comp_list">Maîtrise de l'assainissement</li>
+                        <li class="comp_list">Aisance durant les missions de terrain</li>
+                        <li class="comp_list">Notions réglementaires</li>
+                    </ul>
+                </div>
+                <div class="block comp_block">
+                    <h3>Relationnelles</h3>
+                    <ul>
+                        <li class="comp_list">Connaissance des collectivités territoriales</li>
+                        <li class="comp_list">Esprit d'équipe</li>
+                        <li class="comp_list">Maîtrise du reporting</li>
+                        <li class="comp_list">Maîtrise de l'anglais (TOEIC niv. C1)</li>
+                    </ul>
+                </div>
+            </div> <!-- end container -->
+
+            <h1>Expérience professionnelle</h1>
             <div class="container">
-                <img src="{{content}}">
+                <table class="exp_table">
+                    {% for line in exp_table %}
+                        <tr class="{{line.odd}}">
+                            <th>{{line.date | safe}}</th>
+                            <td>{{line.corpus | safe}}</td>
+                            <td>{{line.more | safe}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
             </div>
-        </div>
+
+            <h1>Formation</h1>
+            <div class="container">
+                <table class="exp_table">
+                    {% for line in formation_table %}
+                        <tr class="{{line.odd}}">
+                            <th>{{line.date | safe}}</th>
+                            <td>{{line.corpus | safe}}</td>
+                            <td>{{line.more | safe}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div> <!-- end wrapper -->
+
+        <a href="#" class="JesterBox">
+          <div id="archi_serveur"><img src="{{img_archi_serveur}}"></div>
+        </a>
     </body>
 
 </html>

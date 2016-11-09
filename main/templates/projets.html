@@ -3,33 +3,38 @@
     <head>
         <meta charset="utf-8">
         <meta name="ROBOTS" content="NONE" />
-        <title>Accueil</title>
+        <title>Devblog</title>
         
         {% load staticfiles %}
         <link rel="stylesheet" type="text/css" href="{{style}}" />
+        <link rel="favicon" href="{{favicon}}" />
     </head>
 
     <body>
         <div id="wrapper">   
             <div>
-                <h1 class="text_over_main_img">- Sighill<br>-- Projets</h1>
+                <h1 class="text_over_main_img">Projets</h1>
                 <img src="{{main_img}}" alt="main_img" id="main_img">
             </div> <!-- end main_img div -->
 
-            <div class="navbar_container">
+            <div class="container navbar_container">
                 {% for navbar_item in navbar %}
-                <div class="navbar_block">
+                <div class="block">
                     <a href="{{navbar_item.link}}">
-                        <h4>{{navbar_item.name}}</h4>
+                        <h3>{{navbar_item.name}}</h3>
                     </a>
                 </div> <!-- end navbar_block -->
                 {% endfor %}
             </div> <!-- end navbar_container -->
 
             <div class="container">
-                <img src="{{content}}">
-            </div>
-        </div>
+            <h1>Travail en cours</h1>
+            </div> <!-- end container -->
+        </div> <!-- end wrapper -->
+
+        <a href="#" class="JesterBox">
+          <div id="archi_serveur"><img src="{{img_archi_serveur}}"></div>
+        </a>
     </body>
 
 </html>

@@ -10,10 +10,10 @@ from main.models import Navbar
 def DevblogHome(request):
     context = {
         'img_archi_serveur':'/static/architecture_serveur.png',
-        'style': '/static/style.css',
+        'style': '/static/style_season.css',
         'main_img': '/static/main_img.png',
         'navbar': Navbar.objects.all().order_by('uid'),
-        'content': Post.objects.all(),
+        'content': Post.objects.all().order_by('posted_date').reverse(),
         'categories': [i[0] for i in Post.category_choices],
     }
     template = loader.get_template('devblog.html')
