@@ -3,9 +3,13 @@
   :root {
     font-size: 4vw;
   }
-  img#main_img{
+  .container, img#main_img{
     max-width: 100%;
   }
+}
+
+h1{
+  font-size : 100%;
 }
 
 /* FOR DESKTOP BROWSERS - - - - - - - - - - - - - - - - - - - - - -*/
@@ -74,6 +78,11 @@ th, td {
   height: 50px;
 }
 
+.img_thumbnail{
+  width: 100px;
+  height: auto;
+}
+
 
 #wrapper {
   width: 900px;
@@ -104,6 +113,10 @@ th, td {
   flex-flow: column;
   justify-content: space-between;
   background-color: #ffffff;
+}
+
+.child {
+  width: 100%;
 }
 
 /* NAVBAR & TOP PART - - - - - - - - - - - - - - - - - - - - - - - */
@@ -172,7 +185,7 @@ th, td {
 
 /* PROJECTS SPECIFICS - - - - - - - - - - - - - - - - - - - - - - -*/
 .doc_container{
-  
+  padding: 5px;
 }
 
 /* JesterBox - - - - - - - - - - - - - - - - - - - - - - - - - - - */

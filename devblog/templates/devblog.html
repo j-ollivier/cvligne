@@ -27,18 +27,18 @@
                 {% endfor %}
             </div> <!-- end navbar_container -->
          
-            <div class="blog_corpus">
+<!--             <div class="blog_corpus"> -->
                 {% for post in content %}
-                <div class="container">
-                    <div class="block">
+                <div class="container child">
+                    <div class="block child">
                         <h2>{{post.title}}</h2>
                         <p class="blog_post_info">Posté le {{post.posted_date.day}}-{{post.posted_date.month}}-{{post.posted_date.year}}. Catégorie : {{post.category}}.</p>
                         <p>{{post.body | safe}}</p>
                     </div>
                 </div>
                 {% endfor %}
-            </div> <!-- end corpus container -->
-
+            <!-- </div> end corpus container -->
+<!-- 
             <div class="blog_sidebar_right">
                 <div class="container">
                     <div class="block">
@@ -48,14 +48,14 @@
                             <li>{{category}}</li>
                         {% endfor %}
                         </ul>
-                    </div> <!-- end block -->
+                    </div> <!-- end block
 
                     <div class="block">
                         <h4>Architecture serveur</h4>
                         <a href="#archi_serveur"><img src="{{img_archi_serveur}}"></a>
                     </div>
-                </div> <!-- end container -->
-            </div>
+                </div>
+            </div> -->
         </div> <!-- end wrapper -->
 
         <a href="#" class="JesterBox">
