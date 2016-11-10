@@ -28,7 +28,18 @@
             </div> <!-- end navbar_container -->
 
             <div class="container">
-            <h1>Travail en cours</h1>
+                {% for project in project_qs %}
+                <div class="block">
+                    <h2>{{project.title}}</h2>
+                    <p class="blog_post_info">Posté le {{project.posted_date.day}}-{{project.posted_date.month}}-{{project.posted_date.year}}.</p>
+                    <p>{{project.corpus | safe}}</p>
+                    <div class="container doc_container">
+                    {% for doc in project.docs_set.all %}
+                        <a href="{{doc.link}}"><img src="{{doc.doc_icon}}">{{doc.title | safe}}</a>
+                    {% endfor %}
+                    </div>
+                </div>
+                {% endfor%}
             </div> <!-- end container -->
         </div> <!-- end wrapper -->
 

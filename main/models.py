@@ -1,7 +1,6 @@
 from django.db import models
 
-# Create your models here.
-
+#####################################################################
 class Navbar(models.Model):
     """
         To facilitate devblog's navbar building and tidiness
@@ -21,7 +20,8 @@ class Navbar(models.Model):
     # Méthods
     def __str__(self):
         return self.name
-    
+
+#####################################################################
 class ExpTable(models.Model):
     """
         Content and useful information for populating and
@@ -41,6 +41,7 @@ class ExpTable(models.Model):
     def __str__(self):
         return self.name
 
+#####################################################################
 class FormationTable(models.Model):
     """
         Content and useful information for populating and
@@ -59,3 +60,38 @@ class FormationTable(models.Model):
     # Méthods
     def __str__(self):
         return self.name
+
+
+#####################################################################
+class Projects(models.Model):
+    """
+        Stores content for my personal projects presentations
+    """
+    # Attributes
+    uid = models.AutoField(db_index = True, primary_key = True)
+    title = models.CharField(max_length = 200)
+    corpus = models.TextField()
+    posted_date = models.DateTimeField(db_index=True, auto_now_add=True)
+    
+    # Methods
+    def __str__(self):
+        return self.title
+
+#####################################################################
+class ProjectsDocs(models.Model):
+    """
+        Stores docs static links, doc file type etc for each 
+        project document.
+    """
+
+    # Attributes
+    uid = models.AutoField(db_index = True, primary_key= True)
+    project_uid = models.ForeignKey(
+        Projects , related_name='docs_set', blank=True, null=True)
+    title = models.CharField(max_length = 200)
+    link = models.CharField(max_length = 200)
+    doc_icon = models.CharField(max_length = 200)
+
+    # Methods
+    def __str__(self):
+        return self.title

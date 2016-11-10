@@ -6,9 +6,6 @@
   img#main_img{
     max-width: 100%;
   }
-  .container , .block{
-    max-width: 100%;
-  }
 }
 
 /* FOR DESKTOP BROWSERS - - - - - - - - - - - - - - - - - - - - - -*/
@@ -47,6 +44,9 @@ h2, h3, h4 {
   border-bottom: solid 1px #507960;
   background-color: #EEF0FC;
 }
+h1{
+  width: 100%;
+}
 
 h3 {
   text-align: center;
@@ -67,7 +67,6 @@ p {
 table{
   width:898px;
   border-collapse: collapse;
-  padding: 5px;
 }
 
 th, td {
@@ -127,20 +126,20 @@ th, td {
 
 /* BLOG SPECIFICS - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
-#blog_corpus{
+.blog_corpus{
   width: 750px;
   border: hidden;
   margin: 0;
 }
 
-#blog_sidebar_right{
+.blog_sidebar_right{
   width: 144px;
   margin: 0;
   border: hidden;
 }
 
-#blog_sidebar_right img{
-  width: 90%;
+.blog_sidebar_right img{
+  max-width: 140px;
   height: auto;
 }
 
@@ -149,9 +148,6 @@ th, td {
 }
 
 /* CV SPECIFICS - - - - - - - - - - - - - - - - - - - - - - - - - -*/
-
-.container_comp{
-}
 
 .comp_block{
   max-width: 33%;
@@ -168,6 +164,15 @@ th, td {
 
 .table_evenline{
   background-color: #ffffff;
+}
+
+.table_align_top{
+  vertical-align: top;
+}
+
+/* PROJECTS SPECIFICS - - - - - - - - - - - - - - - - - - - - - - -*/
+.doc_container{
+  
 }
 
 /* JesterBox - - - - - - - - - - - - - - - - - - - - - - - - - - - */

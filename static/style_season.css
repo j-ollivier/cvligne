@@ -6,9 +6,6 @@
   img#main_img{
     max-width: 100%;
   }
-  .container , .block{
-    max-width: 100%;
-  }
 }
 
 /* FOR DESKTOP BROWSERS - - - - - - - - - - - - - - - - - - - - - -*/
@@ -20,7 +17,7 @@
     max-width: 898px;
   }
   img#main_img{
-    width: 898px;
+    width: 900px;
   }
 }
 
@@ -47,6 +44,9 @@ h2, h3, h4 {
   border-bottom: solid 1px #507960;
   background-color: #EEF0FC;
 }
+h1{
+  width: 100%;
+}
 
 h3 {
   text-align: center;
@@ -64,8 +64,19 @@ p {
   width: 100% auto;
 }
 
+table{
+  width:898px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  height: 50px;
+}
+
+
 #wrapper {
-  max-width: 900px;
+  width: 900px;
   display: flex;
   flex: 0 0 auto;
   flex-flow: row wrap;
@@ -85,7 +96,6 @@ p {
   border: solid #507960 1px;
   text-align: left;
   background-color: rgba(0, 0, 0, 0);
-
 }
 
 .block { 
@@ -105,9 +115,8 @@ p {
 
 .text_over_main_img{
   position: absolute;
-  top: 20px;
-  padding-left: 250px;
-  color: white;
+  top: 12px;
+  padding-left: 210px;
 }
 
 #main_img{
@@ -117,21 +126,20 @@ p {
 
 /* BLOG SPECIFICS - - - - - - - - - - - - - - - - - - - - - - - - -*/
 
-#blog_corpus{
-  width: 700px;
+.blog_corpus{
+  width: 750px;
   border: hidden;
   margin: 0;
 }
 
-#blog_sidebar_right{
-  width: 195px;
-  flex: 0 0 auto;
-  border: 0px;
+.blog_sidebar_right{
+  width: 144px;
   margin: 0;
+  border: hidden;
 }
 
-#blog_sidebar_right img{
-  width: 100%;
+.blog_sidebar_right img{
+  max-width: 140px;
   height: auto;
 }
 
@@ -139,8 +147,36 @@ p {
   font-size: 70%;
 }
 
-/* JesterBox 
- * Author: Schizohatter/Soanvig (http://schizohatter.tk)
+/* CV SPECIFICS - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+.comp_block{
+  max-width: 33%;
+}
+
+.comp_list{
+  margin:2px;
+  list-style-type: square;
+}
+
+.table_oddline{
+  background-color: #eef0fa;
+}
+
+.table_evenline{
+  background-color: #ffffff;
+}
+
+.table_align_top{
+  vertical-align: top;
+}
+
+/* PROJECTS SPECIFICS - - - - - - - - - - - - - - - - - - - - - - -*/
+.doc_container{
+  
+}
+
+/* JesterBox - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* Author: Schizohatter/Soanvig (http://schizohatter.tk)
  * More information in readme (https://github.com/soanvig/JesterBox)
  */
 
