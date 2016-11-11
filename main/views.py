@@ -33,7 +33,7 @@ def Projets(request):
 
 def ProjetFocus(request, project_uid):
     # Making a liste from the project_uid string received
-    project_uid = project_uid.split(',')
+    project_uid = [i for i in project_uid]
     context = {
         'style': '/static/style_season.css',
         'main_img': '/static/main_img.png',

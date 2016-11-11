@@ -177,8 +177,8 @@ th, td {
 }
 
 /* PROJECTS SPECIFICS - - - - - - - - - - - - - - - - - - - - - - -*/
-.doc_container{
-  border: hidden;
+.no_border{
+  border-color: rgba(0, 0, 0, 0);
 }
 
 .doc_block{
