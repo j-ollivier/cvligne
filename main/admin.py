@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Navbar , ExpTable, FormationTable, Projects, ProjectsDocs
+from .models import Navbar , ExpTable, FormationTable, Projects, ProjectsDocs, FooterItems
 
 #####################################################################
 class AdminNavbar(admin.ModelAdmin):
@@ -20,7 +20,7 @@ admin.site.register(ExpTable, AdminExpTable)
 #####################################################################
 class AdminFormationTable(admin.ModelAdmin):
     list_display = [
-        'uid', 'name','odd', 'corpus', 'more']
+        'uid', 'name','odd', 'corpus', 'more', 'link']
     ordering = ['uid']
 
 admin.site.register(FormationTable, AdminFormationTable)
@@ -41,6 +41,10 @@ class AdminProjectsDocs(admin.ModelAdmin):
 
 admin.site.register(ProjectsDocs, AdminProjectsDocs)
 
+#####################################################################
+class AdminFooterItems(admin.ModelAdmin):
+    list_display = [
+        'uid', 'title', 'link']
+    ordering = ['uid']
 
-
-
+admin.site.register(FooterItems, AdminFooterItems)

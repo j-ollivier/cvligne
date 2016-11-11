@@ -27,24 +27,38 @@
                 {% endfor %}
             </div> <!-- end navbar_container -->
 
+            {% for project in project_qs %}
             <div class="container child">
-                {% for project in project_qs %}
                 <div class="block child">
                     <h2>{{project.title}}</h2>
                     <p class="blog_post_info">Posté le {{project.posted_date.day}}-{{project.posted_date.month}}-{{project.posted_date.year}}.</p>
                     <p>{{project.corpus | safe}}</p>
-                    <div class="container doc_container">
+                    <div class="container no_border">
                     {% for doc in project.docs_set.all %}
+                    <div class="block doc_block">
                         <a href="{{doc.link}}"><img src="{{doc.doc_icon}}">{{doc.title | safe}}</a>
+                    </div>
                     {% endfor %}
                     </div>
                 </div>
-                {% endfor%}
-            </div> <!-- end container -->
+            </div><!-- end container -->
+            {% endfor %}
+            <div class="container no_border">
+                <p><a href="/projets">{{back_link_text}}</a></p>
+                <p><a href="/cv">Retour au CV</a></p>
+            </div>
+
+            <div><br><br><br>.</div>
+            <div class="footer">
+            {% for item in footer_items %}
+                - <a href="{{item.link}}">{{item.title}}</a>
+            {% endfor %}
+             -
+            </div>
         </div> <!-- end wrapper -->
 
         <a href="#" class="JesterBox">
-          <div id="archi_serveur"><img src="{{img_archi_serveur}}"></div>
+          <div id="archi_serveur"><img src="/static/architecture_serveur.png"></div>
         </a>
     </body>
 

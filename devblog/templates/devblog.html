@@ -26,40 +26,27 @@
                 </div> <!-- end navbar_block -->
                 {% endfor %}
             </div> <!-- end navbar_container -->
-         
-<!--             <div class="blog_corpus"> -->
-                {% for post in content %}
-                <div class="container child">
-                    <div class="block child">
-                        <h2>{{post.title}}</h2>
-                        <p class="blog_post_info">Posté le {{post.posted_date.day}}-{{post.posted_date.month}}-{{post.posted_date.year}}. Catégorie : {{post.category}}.</p>
-                        <p>{{post.body | safe}}</p>
-                    </div>
-                </div>
-                {% endfor %}
-            <!-- </div> end corpus container -->
-<!-- 
-            <div class="blog_sidebar_right">
-                <div class="container">
-                    <div class="block">
-                        <h4>Catégories</h4>
-                        <ul>
-                        {% for category in categories %}
-                            <li>{{category}}</li>
-                        {% endfor %}
-                        </ul>
-                    </div> <!-- end block
 
-                    <div class="block">
-                        <h4>Architecture serveur</h4>
-                        <a href="#archi_serveur"><img src="{{img_archi_serveur}}"></a>
-                    </div>
+            {% for post in content %}
+            <div class="container child">
+                <div class="block child">
+                    <h2>{{post.title}}</h2>
+                    <p class="blog_post_info">Posté le {{post.posted_date.day}}-{{post.posted_date.month}}-{{post.posted_date.year}}. Catégorie : {{post.category}}.</p>
+                    <p>{{post.body | safe}}</p>
                 </div>
-            </div> -->
+            </div>
+                {% endfor %}
+            <div class="container"><br><br><br>.</div>
+            <div class="footer">
+            {% for item in footer_items %}
+                - <a href="{{item.link}}">{{item.title}}</a>
+            {% endfor %}
+             -
+            </div>
         </div> <!-- end wrapper -->
 
         <a href="#" class="JesterBox">
-          <div id="archi_serveur"><img src="{{img_archi_serveur}}"></div>
+          <div id="archi_serveur"><img src="/static/architecture_serveur.png"></div>
         </a>
     </body>
 

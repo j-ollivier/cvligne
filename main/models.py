@@ -55,7 +55,10 @@ class FormationTable(models.Model):
     odd = models.CharField(max_length=20)
     date = models.CharField(max_length = 120)
     corpus = models.TextField()
-    more = models.CharField(max_length = 120, null = True)
+    more = models.CharField(
+        max_length = 120, blank = True, default= '-')
+    link = models.CharField(
+        max_length = 120, blank = True, default= '-')
 
     # Méthods
     def __str__(self):
@@ -92,6 +95,18 @@ class ProjectsDocs(models.Model):
     link = models.CharField(max_length = 200)
     doc_icon = models.CharField(max_length = 200)
 
+    # Methods
+    def __str__(self):
+        return self.title
+
+#####################################################################
+class FooterItems(models.Model):
+    """
+        Just a list of footer links and text for my webpages
+    """
+    uid = models.AutoField(db_index = True, primary_key= True)
+    title = models.CharField(max_length = 200)
+    link = models.CharField(max_length = 200)
     # Methods
     def __str__(self):
         return self.title

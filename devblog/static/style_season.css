@@ -1,15 +1,16 @@
 /* FOR MOBILE BROWSERS - - - - - - - - - - - - - - - - - - - - - - */
 @media (max-width: 1300px){
   :root {
-    font-size: 4vw;
+    font-size: 3.5vw;
   }
   .container, img#main_img{
     max-width: 100%;
   }
-}
 
-h1{
-  font-size : 100%;
+  h1{
+    font-size : 100%;
+  }
+
 }
 
 /* FOR DESKTOP BROWSERS - - - - - - - - - - - - - - - - - - - - - -*/
@@ -118,7 +119,6 @@ th, td {
 .child {
   width: 100%;
 }
-
 /* NAVBAR & TOP PART - - - - - - - - - - - - - - - - - - - - - - - */
 
 .navbar_container{
@@ -130,41 +130,34 @@ th, td {
   position: absolute;
   top: 12px;
   padding-left: 210px;
+  max-width: 600px;
 }
 
-#main_img{
-/*  border: solid #507960 1px;
-*/}
+/* FOOTER SPECIFICS - - - - - - - - - - - - - - - - - - - - - - - -*/
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1b1b1b;
+  text-align: center;
+  border: solid #507960 1px;
+  color: white;
+  font-size: 120%;
+}
 
+.footer a{
+ color: white;
+ font-weight: bold;
+}
 /* BLOG SPECIFICS - - - - - - - - - - - - - - - - - - - - - - - - -*/
-
-.blog_corpus{
-  width: 750px;
-  border: hidden;
-  margin: 0;
-}
-
-.blog_sidebar_right{
-  width: 144px;
-  margin: 0;
-  border: hidden;
-}
-
-.blog_sidebar_right img{
-  max-width: 140px;
-  height: auto;
-}
 
 .blog_post_info{
   font-size: 70%;
 }
 
 /* CV SPECIFICS - - - - - - - - - - - - - - - - - - - - - - - - - -*/
-
-.comp_block{
-  max-width: 33%;
-}
 
 .comp_list{
   margin:2px;
@@ -184,8 +177,15 @@ th, td {
 }
 
 /* PROJECTS SPECIFICS - - - - - - - - - - - - - - - - - - - - - - -*/
-.doc_container{
+.no_border{
+  border: hidden;
+}
+
+.doc_block{
+  flex-grow: 0;
+  margin-right: 40px;
   padding: 5px;
+  border: dotted #507960 1px;
 }
 
 /* JesterBox - - - - - - - - - - - - - - - - - - - - - - - - - - - */

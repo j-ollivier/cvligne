@@ -82,9 +82,17 @@
                             <th>{{line.date | safe}}</th>
                             <td>{{line.corpus | safe}}</td>
                             <td>{{line.more | safe}}</td>
+                            <td>{{line.link | safe}}</td>
                         </tr>
                     {% endfor %}
                 </table>
+            </div>
+            <div class="container"><br><br><br>.</div>
+            <div class="footer">
+            {% for item in footer_items %}
+                - <a href="{{item.link}}">{{item.title}}</a>
+            {% endfor %}
+             -
             </div>
         </div> <!-- end wrapper -->
 
